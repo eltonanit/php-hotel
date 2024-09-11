@@ -57,42 +57,40 @@
     <title>PHP HOTEL </title>
 </head>
 <body>
-    <table class="table">
+   
+ 
+     <div class="container">
+        <div class="row gy-3">
+            <div class="col-12">
+            <h2 class="text-center"> HOTEL </h2>
+          
+<table class="table">   
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Nome</th>
+      <th scope="col">HOTEL</th>
       <th scope="col">Descrizione</th>
       <th scope="col">Parcheggio</th>
       <th scope="col">Voto</th>
       <th scope="col">Distanza dal centro</th>
     </tr>
   </thead>
-  <tbody>
+ 
+  <tbody> 
+ <?php foreach($hotels as $index => $hotel){ ?>
     <tr>
-      <th scope="row">1</th>
-      <td><?php echo $hotels['name'] ? "Commestibile" : "NON MANGIARLA"; ?> </td>
-       <td><?php echo $hotels['description']; ?></td>
-       <td><?php echo $hotels['parking'] ? "Commestibile" : "NON MANGIARLA"; ?></td>
-       <td><?php echo $hotels['vote']; ?></td>
-       <td><?php echo $hotels['distance_to_center']; ?></td>
-    
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Francesco</td>
-      <td>Bianchi</td>
-      <td>francesco.bianchi</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Alessandro</td>
-      <td>Rossi</td>
-      <td>alessandro.rossi</td>
-    </tr>
+      <th scope="row"><?php echo $index + 1 ?></th>
+      <td><h4><?php echo $hotel['name'] ?> </h4></td>
+       <td><?php echo $hotel['description']; ?></td>
+       <td><?php echo $hotel['parking'] ? "Parcheggio " : "Non ha il parcheggio"; ?></td>
+       <td><?php echo $hotel['vote']; ?></td>
+       <td><?php echo $hotel['distance_to_center']; ?></td>    
+    </tr>     
+    <?php } ?> 
   </tbody>
 </table>
-       
+      </div>
+            </div>
 
 
 
