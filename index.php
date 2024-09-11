@@ -57,6 +57,46 @@
     <title>PHP HOTEL </title>
 </head>
 <body>
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Descrizione</th>
+      <th scope="col">Parcheggio</th>
+      <th scope="col">Voto</th>
+      <th scope="col">Distanza dal centro</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><?php echo $hotels['name'] ? "Commestibile" : "NON MANGIARLA"; ?> </td>
+       <td><?php echo $hotels['description']; ?></td>
+       <td><?php echo $hotels['parking'] ? "Commestibile" : "NON MANGIARLA"; ?></td>
+       <td><?php echo $hotels['vote']; ?></td>
+       <td><?php echo $hotels['distance_to_center']; ?></td>
+    
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Francesco</td>
+      <td>Bianchi</td>
+      <td>francesco.bianchi</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Alessandro</td>
+      <td>Rossi</td>
+      <td>alessandro.rossi</td>
+    </tr>
+  </tbody>
+</table>
+       
+
+
+
+
      <div class="container">
         <div class="row gy-3">
             <div class="col-12">
@@ -95,21 +135,24 @@
             <!-- Sistema di -Filtraggio -->
 
 
-            <?php foreach($filteredArry as $plant){ ?>
+            <?php foreach($filteredArry as $hotels){ ?>
                 <div class="col-12">
-                    <div class="card <?php echo $plant['colore']; ?>">
+                    <div class="card <?php echo $hotels['colore']; ?>">
                         <div class="card-title p-2">
-                            <h2><?php echo $plant['name']; ?></h2>
+                            <h2><?php echo $hotels['name']; ?></h2>
                         </div>
                         <div class="card-body">
-                            <p><?php echo $plant['famiglia']; ?></p>
-                            <p><?php echo $plant['commestibili'] ? "Commestibile" : "NON MANGIARLA"; ?></p>
-                            <p><?php echo $plant['colore']; ?></p>
+                            <p><?php echo $hotels['description']; ?></p>
+                            <p><?php echo $hotels['parking'] ? "Commestibile" : "NON MANGIARLA"; ?></p>
+                            <p><?php echo $hotels['vote']; ?></p>
+                            <p><?php echo $hotels['distance_to_center']; ?></p>
                         </div>
                     </div>
                 </div>
 
             <?php } ?>
+
+          
             </div>
             </div>
 
