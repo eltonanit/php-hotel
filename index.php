@@ -62,7 +62,7 @@
      <div class="container">
         <div class="row gy-3">
             <div class="col-12">
-            <h2 class="text-center"> HOTEL </h2>
+            <h2 class="text-center"> ESERCIZIO HOTEL </h2>
           
 <table class="table">   
   <thead>
@@ -89,73 +89,8 @@
     <?php } ?> 
   </tbody>
 </table>
-      </div>
-            </div>
-
-
-
-
-     <div class="container">
-        <div class="row gy-3">
-            <div class="col-12">
-            <h2 class="text-center"> HOTEL <a href="./index.php" class="btn btn-sm btn-primary"> Vedi tutti </a></h2>
-            </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-12">
-                    <form action="index.php" method="GET">
-                        <div class="row">
-                            <div class="col-4">
-                                <input type="text" name="name" placeholder="Nome" class="form-control form-control-sm" 
-                                value="<?php echo$_GET['name'] ?? ''; ?>" > <!-- echo sta per scrivi la ricerca e nel input box lascia la parola o filtro cercato -->
-                                
-                            </div>
-                            <div class="col-4">
-                                <input type="text" name="famiglia" placeholder="Famiglia" class="form-control form-control-sm"
-                                 value="<?php echo$_GET['famiglia'] ?? ''; ?>">
-                            </div>
-                             <div class="col-3">
-                                <select  name="commestibili" id="commestibili" class="form-control form-control-sm"> 
-                                    <option value="">Selezione comestibilita</option>
-                                    <option value="0  <?php echo$_GET['Non commestibili'] ?? ''; ?>">Non commestibili</option><!-- echo sta per scrivi la ricerca e nel input box lascia la parola o filtro cercato -->
-                                    <option value="1   <?php echo$_GET['commestibili'] ?? ''; ?>"> Commestibili</option> <!-- echo sta per scrivi la ricerca e nel input box lascia la parola o filtro cercato -->
-                                </select>
-                            </div>
-                            <div class="col-4">
-                                <button class="btn btn-sm btn-primary">Cerca</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="row g-4 mt-3">
-
-            <!-- Sistema di -Filtraggio -->
-
-
-            <?php foreach($filteredArry as $hotels){ ?>
-                <div class="col-12">
-                    <div class="card <?php echo $hotels['colore']; ?>">
-                        <div class="card-title p-2">
-                            <h2><?php echo $hotels['name']; ?></h2>
-                        </div>
-                        <div class="card-body">
-                            <p><?php echo $hotels['description']; ?></p>
-                            <p><?php echo $hotels['parking'] ? "Commestibile" : "NON MANGIARLA"; ?></p>
-                            <p><?php echo $hotels['vote']; ?></p>
-                            <p><?php echo $hotels['distance_to_center']; ?></p>
-                        </div>
-                    </div>
-                </div>
-
-            <?php } ?>
-
-          
-            </div>
-            </div>
-
-        </div>
-    </div>
-
+</div>
+</div>
+ 
 </body>
 </html>
